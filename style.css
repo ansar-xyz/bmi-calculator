@@ -1,37 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: "Montserrat", sans-serif;
+    color: #24364b;
 }
+
 .container-fluid {
     min-height: 100vh;
+    min-height: 100dvh;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(152, 167, 239);
+    background: linear-gradient(145deg, #edf3ff, #dce8ff);
 }
-h5 {
-    font-size: clamp(15px, 1.5vw, 30px);
+
+.page-heading {
+    margin-bottom: 12px;
+    text-align: center;
 }
+
+.eyebrow {
+    margin-bottom: 6px;
+    color: #657ca1;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.page-heading h1 {
+    margin-bottom: 4px;
+    color: #203652;
+    font-size: clamp(22px, 5vw, 30px);
+    font-weight: 800;
+}
+
+.subtitle {
+    margin-bottom: 0;
+    color: #71829a;
+    font-size: 13px;
+}
+
 .box {
+    width: 100%;
+    max-width: 440px;
+    padding: 18px 22px;
     background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 18px 45px rgba(42, 66, 105, 0.14);
+}
+
+.form-label {
+    display: block;
+    margin: 10px 0 5px;
+    color: #344a63;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.form-label:first-child {
+    margin-top: 0;
+}
+
+.unit {
+    color: #8290a2;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.required {
+    color: #e46d72;
+}
+
+.form-control {
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #dce4ed;
     border-radius: 10px;
-    width: 500px;
-    max-width: 80vw;
-    margin: 0 auto;
-    box-shadow: 0px 5px 20px rgba(2, 2, 2, 0.2);
+    background-color: #f8fafc;
+    color: #24364b;
+    font-family: inherit;
+    font-size: 14px;
 }
+
+.form-control:focus {
+    border-color: #7189d8;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(113, 137, 216, 0.15);
+}
+
+.form-control::placeholder {
+    color: #a1adbc;
+}
+
 button {
-    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px 18px !important;
+    border: none !important;
+    border-radius: 10px !important;
+    background: linear-gradient(100deg, #536fc4, #735fc1);
+    font-family: inherit;
+    font-size: 14px;
 }
+
+button:hover {
+    background: linear-gradient(100deg, #465fae, #644eaf);
+}
+
 .output {
-  width: 500px;
-  max-width: 80vw;
-  min-height: 60px;
-  margin-top: 10px;
+    width: 100%;
+    max-width: 440px;
+    min-height: 0;
+    margin-top: 10px;
+    padding: 0;
+    text-align: center;
+}
+
+#bmi {
+    margin: 0;
+    padding: 12px 14px 6px;
+    border-radius: 12px 12px 0 0;
+    background-color: #263c5a;
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+#bmiOutput {
+    margin: 0;
+    padding: 4px 14px 12px;
+    border-radius: 0 0 12px 12px;
+    background-color: #263c5a;
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+#bmi:empty,
+#bmiOutput:empty {
+    display: none;
+}
+
+@media (max-height: 700px) {
+    .container-fluid {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .page-heading {
+        margin-bottom: 8px;
+    }
+
+    .eyebrow {
+        margin-bottom: 3px;
+    }
+
+    .box {
+        padding: 14px 20px;
+    }
+
+    .form-label {
+        margin-top: 7px;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+
+    .output {
+        margin-top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-fluid {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .box {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
 }
